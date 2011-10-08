@@ -3,7 +3,8 @@
 require 'bacon'
 require 'guard'
 require 'guard/guard'
-require 'guard/bacon/version'
+
+require File.expand_path('../bacon/version', __FILE__)
 
 module Guard
   class Bacon < Guard

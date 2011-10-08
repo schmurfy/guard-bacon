@@ -1,10 +1,9 @@
 # -*- encoding: utf-8 -*-
-$:.push File.expand_path("../lib", __FILE__)
-require "guard/guard-bacon/version"
+require File.expand_path('../lib/guard/bacon/version', __FILE__)
 
 Gem::Specification.new do |s|
   s.name        = "guard-bacon"
-  s.version     = Guard::Guard::VERSION
+  s.version     = Guard::BACON_GUARD_VERSION
   s.authors     = ["Julien Ammous"]
   s.email       = ["schmurfy@gmail.com"]
   s.homepage    = ""
@@ -16,6 +15,6 @@ Gem::Specification.new do |s|
   s.files         = `git ls-files`.split("\n")
   s.require_paths = ["lib"]
 
-  s.add_runtime_dependency "guard"
-  s.add_runtime_dependency "schmurfy-bacon", "~> 1.2"
+  s.add_runtime_dependency "guard",           "~> 0.8.4"
+  s.add_runtime_dependency "schmurfy-bacon",  "~> 1.2"
 end
