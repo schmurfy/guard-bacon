@@ -3,7 +3,7 @@
 require 'bacon'
 require 'guard'
 require 'guard/guard'
-require 'guard/guard-bacon/version'
+require 'guard/bacon/version'
 
 module Guard
   class Bacon < Guard
