@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require "guard/guard-bacon/version"
+require "guard/bacon/version"
 
 Gem::Specification.new do |s|
   s.name        = "guard-bacon"
