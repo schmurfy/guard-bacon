@@ -17,4 +17,6 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency "guard",           "~> 1.0.1"
   s.add_runtime_dependency "schmurfy-bacon",  "~> 1.2"
+  
+  s.add_development_dependency 'rake'
 end
