@@ -15,6 +15,6 @@ Gem::Specification.new do |s|
   s.files         = `git ls-files`.split("\n")
   s.require_paths = ["lib"]
 
-  s.add_runtime_dependency "guard",           "~> 0.8.4"
+  s.add_runtime_dependency "guard",           "~> 1.0.1"
   s.add_runtime_dependency "schmurfy-bacon",  "~> 1.2"
 end
