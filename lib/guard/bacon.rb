@@ -83,7 +83,7 @@ module Guard
     end
     
     # Called on file(s) modifications
-    def run_on_change(paths)
+    def run_on_changes(paths)
       paths.each do |path|
         file_changed(path)
       end
