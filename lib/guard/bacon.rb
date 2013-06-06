@@ -49,27 +49,27 @@ module Guard
     
     def run_spec(path)
       if File.exists?(path)
-         pid = Kernel.fork do
-           puts "\n●●➤  Running spec: #{path}"
-           counters = ::Bacon.run_file(path)
-           # system "bundle exec bacon -o TestUnit #{path}"
-           # {:installed_summary=>1, :specifications=>19, :depth=>0, :requirements=>30, :failed=>2, :errors => 1}
-           
-           all_specs = counters[:specifications]
-           failed = counters[:failed].to_i + counters[:errors].to_i
-           
-           if failed > 0
-             Notifier.notify("Specs: #{failed} Failures (#{all_specs} specs)",
-                 :image => :failed,
-                 :title => File.basename(path)
-               )
-           else
-             Notifier.notify("Specs: OK (#{all_specs} specs)",
-                 :image => :success,
-                 :title => File.basename(path)
-               )
-           end
-         end
+        pid = Kernel.fork do
+          puts "\n●●➤  Running spec: #{path}"
+          counters = ::Bacon.run_file(path)
+          # system "bundle exec bacon -o TestUnit #{path}"
+          # {:installed_summary=>1, :specifications=>19, :depth=>0, :requirements=>30, :failed=>2, :errors => 1}
+          
+          all_specs = counters[:specifications]
+          failed = counters[:failed].to_i + counters[:errors].to_i
+          
+          if failed > 0
+            Notifier.notify("Specs: #{failed} Failures (#{all_specs} specs)",
+                :image => :failed,
+                :title => File.basename(path)
+              )
+          else
+            Notifier.notify("Specs: OK (#{all_specs} specs)",
+                :image => :success,
+                :title => File.basename(path)
+              )
+          end
+        end
          
          Process.wait(pid)
        else
