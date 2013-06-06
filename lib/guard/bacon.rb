@@ -10,6 +10,7 @@ module Guard
   class Bacon < Guard
 
     def initialize(watchers= [], options= {})
+      @last_run_spec = nil
       super
       if options[:output]
         puts "Bacon: Using output #{options[:output]}."
@@ -48,7 +49,14 @@ module Guard
     end
     
     def run_spec(path)
+      if !File.exists?(path) && @last_run_spec
+        puts "spec not found: #{path}"
+        puts "running last one."
+        path = @last_run_spec
+      end
+      
       if File.exists?(path)
+        @last_run_spec = path
         pid = Kernel.fork do
           puts "\n●●➤  Running spec: #{path}"
           counters = ::Bacon.run_file(path)
