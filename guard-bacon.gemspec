@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.add_runtime_dependency "guard",           "~> 1.8.0"
-  s.add_runtime_dependency "schmurfy-bacon",  "~> 1.5.0"
+  s.add_runtime_dependency "schmurfy-bacon",  "~> 1.6.0"
   
   s.add_development_dependency 'rake'
 end
