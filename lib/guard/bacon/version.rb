@@ -1,3 +1,3 @@
 module Guard
-  BACON_GUARD_VERSION = "1.1.3"
+  BACON_GUARD_VERSION = "1.2.0"
 end
